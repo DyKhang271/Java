@@ -9,7 +9,7 @@ public class DSNV {
 
 	// ===================== HẰNG SỐ (CONSTANTS) =====================
 	public static final List<NhanVien> DU_LIEU_MAC_DINH = Arrays.asList(
-			new NhanVien("NV01", "Huỳnh", "Khang", 20, "Kỹ Thuật", 3, 5000),
+			new NhanVien("NV01", "Trần Duy", "Khang", 20, "Kỹ Thuật", 3, 5000),
 			new NhanVien("NV02", "Trần", "Anh", 25, "Nhân Sự", 5, 6000),
 			new NhanVien("NV03", "Lê", "Hương", 30, "Kế Toán", 10, 8000));
 

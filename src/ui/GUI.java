@@ -82,7 +82,7 @@ public class GUI extends JFrame implements ActionListener {
 		JLabel lblho = new JLabel("Họ:");
 		lblho.setBounds(10, 100, 100, 25);
 		pninput.add(lblho);
-		txtHo = new JTextField("Võ");
+		txtHo = new JTextField("Trần Duy");
 		txtHo.setBounds(120, 100, 250, 25);
 		pninput.add(txtHo);
 
@@ -90,7 +90,7 @@ public class GUI extends JFrame implements ActionListener {
 		JLabel lblten = new JLabel("Tên nhân viên:");
 		lblten.setBounds(380, 100, 130, 25);
 		pninput.add(lblten);
-		txtTen = new JTextField("Linh");
+		txtTen = new JTextField("Khang");
 		txtTen.setBounds(520, 100, 250, 25);
 		pninput.add(txtTen);
 
