@@ -1,4 +1,4 @@
-﻿package dao;
+package dao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,9 +9,9 @@ public class DSNV {
 
 	// ===================== HẰNG SỐ (CONSTANTS) =====================
 	public static final List<NhanVien> DU_LIEU_MAC_DINH = Arrays.asList(
-			new NhanVien("NV01", "Huá»³nh", "Khang", 20, "Ká»¹ Thuáº­t", 3, 5000),
-			new NhanVien("NV02", "Tráº§n", "Anh", 25, "NhÃ¢n Sá»±", 5, 6000),
-			new NhanVien("NV03", "LÃª", "HÆ°Æ¡ng", 30, "Káº¿ ToÃ¡n", 10, 8000));
+			new NhanVien("NV01", "Huỳnh", "Khang", 20, "Kỹ Thuật", 3, 5000),
+			new NhanVien("NV02", "Trần", "Anh", 25, "Nhân Sự", 5, 6000),
+			new NhanVien("NV03", "Lê", "Hương", 30, "Kế Toán", 10, 8000));
 
 	// ===================== CÁC THUỘC TÍNH (FIELDS) =====================
 	private List<NhanVien> ds;
@@ -43,14 +43,14 @@ public class DSNV {
 
 	public void setDs(List<NhanVien> ds) {
 		if (ds == null)
-			throw new IllegalArgumentException("Danh sÃ¡ch khÃ´ng Ä‘Æ°á»£c null");
+			throw new IllegalArgumentException("Danh sách không được null");
 
 		List<NhanVien> banSao = new ArrayList<>();
 		for (NhanVien nv : ds) {
 			if (nv == null)
-				throw new IllegalArgumentException("Danh sÃ¡ch khÃ´ng Ä‘Æ°á»£c chá»©a nhÃ¢n viÃªn null");
+				throw new IllegalArgumentException("Danh sách không được chứa nhân viên null");
 			if (banSao.contains(nv))
-				throw new IllegalArgumentException("TrÃ¹ng mÃ£ nhÃ¢n viÃªn: " + nv.getMa());
+				throw new IllegalArgumentException("Trùng mã nhân viên: " + nv.getMa());
 			banSao.add(nv);
 		}
 
@@ -61,16 +61,16 @@ public class DSNV {
 	// ===================== CÁC PHƯƠNG THỨC THÊM/XÓA (CRUD) =====================
 	public void them(NhanVien nv) {
 		if (nv == null)
-			throw new IllegalArgumentException("NhÃ¢n viÃªn khÃ´ng Ä‘Æ°á»£c null");
+			throw new IllegalArgumentException("Nhân viên không được null");
 		if (ds.contains(nv))
-			throw new IllegalArgumentException("MÃ£ nhÃ¢n viÃªn Ä‘Ã£ tá»“n táº¡i: " + nv.getMa());
+			throw new IllegalArgumentException("Mã nhân viên đã tồn tại: " + nv.getMa());
 		ds.add(nv);
 		Luu.luuFile(ds);
 	}
 
 	public void xoa(int index) {
 		if (index < 0 || index >= ds.size())
-			throw new IndexOutOfBoundsException("Vá»‹ trÃ­ xÃ³a khÃ´ng há»£p lá»‡: " + index);
+			throw new IndexOutOfBoundsException("Vị trí xóa không hợp lệ: " + index);
 		ds.remove(index);
 		Luu.luuFile(ds);
 	}
@@ -88,7 +88,7 @@ public class DSNV {
 
 	public NhanVien get(int i) {
 		if (i < 0 || i >= ds.size())
-			throw new IndexOutOfBoundsException("Vá»‹ trÃ­ truy cáº­p khÃ´ng há»£p lá»‡: " + i);
+			throw new IndexOutOfBoundsException("Vị trí truy cập không hợp lệ: " + i);
 		return ds.get(i);
 	}
 }

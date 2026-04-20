@@ -1,4 +1,4 @@
-﻿package dao;
+package dao;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,7 +20,7 @@ public class Luu {
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
 			oos.writeObject(ds);
 		} catch (Exception e) {
-			throw new RuntimeException("Lá»—i khi lÆ°u file: " + e.getMessage());
+			throw new RuntimeException("Lỗi khi lưu file: " + e.getMessage());
 		}
 	}
 
@@ -32,8 +32,7 @@ public class Luu {
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
 			return (List<NhanVien>) ois.readObject();
 		} catch (Exception e) {
-			throw new RuntimeException("Lá»—i khi Ä‘á»c file: " + e.getMessage());
+			throw new RuntimeException("Lỗi khi đọc file: " + e.getMessage());
 		}
 	}
 }
-

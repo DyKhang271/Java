@@ -1,4 +1,4 @@
-﻿package ui;
+package ui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -30,7 +30,7 @@ public class GUI extends JFrame implements ActionListener {
 
 	// ===================== HẰNG SỐ (CONSTANTS) =====================
 	private static final long serialVersionUID = 1L;
-	private static final String[] DS_PHONG_BAN = { "Ká»¹ Thuáº­t", "Káº¿ ToÃ¡n", "NhÃ¢n Sá»±" };
+	private static final String[] DS_PHONG_BAN = { "Kỹ Thuật", "Kế Toán", "Nhân Sự" };
 
 	// ===================== CÁC THUỘC TÍNH (FIELDS) =====================
 	private JTextField txtMa, txtHo, txtTen, txtTuoi, txtSoThang, txtTienLuong, txtThucNhan, txtTim;
@@ -42,7 +42,7 @@ public class GUI extends JFrame implements ActionListener {
 
 	// ===================== HÀM KHỞI TẠO (CONSTRUCTOR) =====================
 	public GUI() {
-		super("ThÃ´ng Tin NhÃ¢n ViÃªn");
+		super("Thông Tin Nhân Viên");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(800, 670);
 		setLocationRelativeTo(null);
@@ -59,75 +59,75 @@ public class GUI extends JFrame implements ActionListener {
 	private void createUI() {
 		setLayout(null);
 
-		// --- Panel nháº­p liá»‡u ---
+		// --- Panel nhập liệu ---
 		JPanel pninput = new JPanel(null);
 		pninput.setBounds(5, 5, 770, 340);
 		add(pninput);
 
-		JLabel lblthongtin = new JLabel("ThÃ´ng tin nhÃ¢n viÃªn");
+		JLabel lblthongtin = new JLabel("Thông tin nhân viên");
 		lblthongtin.setBounds(280, 10, 300, 25);
 		lblthongtin.setFont(new Font("Arial", Font.BOLD, 25));
 		lblthongtin.setForeground(Color.BLUE);
 		pninput.add(lblthongtin);
 
-		// MÃ£
-		JLabel lblma = new JLabel("MÃ£ nhÃ¢n viÃªn:");
+		// Mã
+		JLabel lblma = new JLabel("Mã nhân viên:");
 		lblma.setBounds(10, 50, 100, 25);
 		pninput.add(lblma);
 		txtMa = new JTextField("NV07");
 		txtMa.setBounds(120, 50, 650, 25);
 		pninput.add(txtMa);
 
-		// Há»
-		JLabel lblho = new JLabel("Há»:");
+		// Họ
+		JLabel lblho = new JLabel("Họ:");
 		lblho.setBounds(10, 100, 100, 25);
 		pninput.add(lblho);
-		txtHo = new JTextField("VÃµ");
+		txtHo = new JTextField("Võ");
 		txtHo.setBounds(120, 100, 250, 25);
 		pninput.add(txtHo);
 
-		// TÃªn
-		JLabel lblten = new JLabel("TÃªn nhÃ¢n viÃªn:");
+		// Tên
+		JLabel lblten = new JLabel("Tên nhân viên:");
 		lblten.setBounds(380, 100, 130, 25);
 		pninput.add(lblten);
 		txtTen = new JTextField("Linh");
 		txtTen.setBounds(520, 100, 250, 25);
 		pninput.add(txtTen);
 
-		// Tuá»•i
-		JLabel lbltuoi = new JLabel("Tuá»•i:");
+		// Tuổi
+		JLabel lbltuoi = new JLabel("Tuổi:");
 		lbltuoi.setBounds(10, 150, 100, 25);
 		pninput.add(lbltuoi);
 		txtTuoi = new JTextField("21");
 		txtTuoi.setBounds(120, 150, 400, 25);
 		pninput.add(txtTuoi);
 
-		// PhÃ²ng ban
-		JLabel lblphongBan = new JLabel("PhÃ²ng ban:");
+		// Phòng ban
+		JLabel lblphongBan = new JLabel("Phòng ban:");
 		lblphongBan.setBounds(530, 150, 100, 25);
 		pninput.add(lblphongBan);
 		cbophongBan = new JComboBox<>(DS_PHONG_BAN);
 		cbophongBan.setBounds(620, 150, 150, 25);
 		pninput.add(cbophongBan);
 
-		// Sá»‘ thÃ¡ng
-		JLabel lblthang = new JLabel("ThÃ¡ng:");
+		// Số tháng
+		JLabel lblthang = new JLabel("Tháng:");
 		lblthang.setBounds(10, 200, 100, 25);
 		pninput.add(lblthang);
 		txtSoThang = new JTextField("3");
 		txtSoThang.setBounds(120, 200, 650, 25);
 		pninput.add(txtSoThang);
 
-		// LÆ°Æ¡ng
-		JLabel lblluong = new JLabel("LÆ°Æ¡ng:");
+		// Lương
+		JLabel lblluong = new JLabel("Lương:");
 		lblluong.setBounds(10, 250, 100, 25);
 		pninput.add(lblluong);
 		txtTienLuong = new JTextField("70000000");
 		txtTienLuong.setBounds(120, 250, 650, 25);
 		pninput.add(txtTienLuong);
 
-		// Thá»±c nháº­n
-		JLabel lblthucnhan = new JLabel("Thá»±c Nháº­n:");
+		// Thực nhận
+		JLabel lblthucnhan = new JLabel("Thực Nhận:");
 		lblthucnhan.setBounds(10, 300, 100, 25);
 		pninput.add(lblthucnhan);
 		txtThucNhan = new JTextField("210000000");
@@ -135,12 +135,12 @@ public class GUI extends JFrame implements ActionListener {
 		txtThucNhan.setBounds(120, 300, 650, 25);
 		pninput.add(txtThucNhan);
 
-		// --- Panel báº£ng ---
+		// --- Panel bảng ---
 		JPanel pntable = new JPanel(null);
 		pntable.setBounds(10, 360, 770, 200);
 		add(pntable);
 
-		String[] cols = { "MÃ£ NV", "Há»", "TÃªn", "Tuá»•i", "PhÃ²ng ban", "Sá»‘ thÃ¡ng", "LÆ°Æ¡ng", "Thá»±c Nháº­n" };
+		String[] cols = { "Mã NV", "Họ", "Tên", "Tuổi", "Phòng ban", "Số tháng", "Lương", "Thực Nhận" };
 		model = new DefaultTableModel(cols, 0) {
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -155,41 +155,41 @@ public class GUI extends JFrame implements ActionListener {
 		scroll.setBounds(0, 0, 770, 200);
 		pntable.add(scroll);
 
-		// --- Panel trÃ¡i (tÃ¬m kiáº¿m) ---
+		// --- Panel trái (tìm kiếm) ---
 		JPanel pntrai = new JPanel(null);
 		pntrai.setBounds(10, 570, 380, 60);
 		pntrai.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(pntrai);
 
-		JLabel lbltim = new JLabel("Nháº­p mÃ£ cáº§n tÃ¬m:");
+		JLabel lbltim = new JLabel("Nhập mã cần tìm:");
 		lbltim.setBounds(10, 15, 150, 25);
 		pntrai.add(lbltim);
 		txtTim = new JTextField();
 		txtTim.setBounds(130, 15, 120, 25);
 		pntrai.add(txtTim);
-		btnTim = new JButton("TÃ¬m");
+		btnTim = new JButton("Tìm");
 		btnTim.setBounds(270, 15, 70, 25);
 		pntrai.add(btnTim);
 
-		// --- Panel pháº£i (thao tÃ¡c) ---
+		// --- Panel phải (thao tác) ---
 		JPanel pnPhai = new JPanel(null);
 		pnPhai.setBounds(400, 570, 380, 60);
 		pnPhai.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(pnPhai);
 
-		btnThem = new JButton("ThÃªm");
+		btnThem = new JButton("Thêm");
 		btnThem.setBounds(20, 15, 70, 25);
 		pnPhai.add(btnThem);
 
-		btnXoaTrang = new JButton("XÃ³a tráº¯ng");
+		btnXoaTrang = new JButton("Xóa trắng");
 		btnXoaTrang.setBounds(100, 15, 110, 25);
 		pnPhai.add(btnXoaTrang);
 
-		btnXoa = new JButton("XÃ³a");
+		btnXoa = new JButton("Xóa");
 		btnXoa.setBounds(220, 15, 70, 25);
 		pnPhai.add(btnXoa);
 
-		btnLuu = new JButton("LÆ°u");
+		btnLuu = new JButton("Lưu");
 		btnLuu.setBounds(300, 15, 70, 25);
 		pnPhai.add(btnLuu);
 	}
@@ -211,7 +211,7 @@ public class GUI extends JFrame implements ActionListener {
 		btnXoaTrang.addActionListener(this);
 		btnTim.addActionListener(this);
 
-		// Tá»± Ä‘á»™ng tÃ­nh Thá»±c Nháº­n khi gÃµ vÃ o form
+		// Tự động tính Thực Nhận khi gõ vào form
 		KeyAdapter calc = new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
@@ -221,7 +221,7 @@ public class GUI extends JFrame implements ActionListener {
 		txtTienLuong.addKeyListener(calc);
 		txtSoThang.addKeyListener(calc);
 
-		// Chá»n dÃ²ng trÃªn báº£ng â†’ Ä‘iá»n vÃ o form
+		// Chọn dòng trên bảng → điền vào form
 		table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
@@ -263,19 +263,19 @@ public class GUI extends JFrame implements ActionListener {
 		String ma = txtMa.getText().trim();
 		if (ma.isBlank()) {
 			txtMa.requestFocusInWindow();
-			throw new IllegalArgumentException("MÃ£ khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Mã không được để trống");
 		}
 
 		String ho = txtHo.getText().trim();
 		if (ho.isBlank()) {
 			txtHo.requestFocusInWindow();
-			throw new IllegalArgumentException("Há» khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Họ không được để trống");
 		}
 
 		String ten = txtTen.getText().trim();
 		if (ten.isBlank()) {
 			txtTen.requestFocusInWindow();
-			throw new IllegalArgumentException("TÃªn khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Tên không được để trống");
 		}
 
 		int tuoi;
@@ -283,13 +283,13 @@ public class GUI extends JFrame implements ActionListener {
 			tuoi = Integer.parseInt(txtTuoi.getText().trim());
 		} catch (Exception e) {
 			txtTuoi.requestFocusInWindow();
-			throw new IllegalArgumentException("Tuá»•i pháº£i lÃ  sá»‘ nguyÃªn");
+			throw new IllegalArgumentException("Tuổi phải là số nguyên");
 		}
 
 		String pb = (String) cbophongBan.getSelectedItem();
 		if (pb == null || pb.isBlank()) {
 			cbophongBan.requestFocusInWindow();
-			throw new IllegalArgumentException("PhÃ²ng ban khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Phòng ban không được để trống");
 		}
 
 		int thang;
@@ -297,7 +297,7 @@ public class GUI extends JFrame implements ActionListener {
 			thang = Integer.parseInt(txtSoThang.getText().trim());
 		} catch (Exception e) {
 			txtSoThang.requestFocusInWindow();
-			throw new IllegalArgumentException("ThÃ¡ng pháº£i lÃ  sá»‘ nguyÃªn");
+			throw new IllegalArgumentException("Tháng phải là số nguyên");
 		}
 
 		double luong;
@@ -305,7 +305,7 @@ public class GUI extends JFrame implements ActionListener {
 			luong = Double.parseDouble(txtTienLuong.getText().trim());
 		} catch (Exception e) {
 			txtTienLuong.requestFocusInWindow();
-			throw new IllegalArgumentException("LÆ°Æ¡ng pháº£i lÃ  sá»‘");
+			throw new IllegalArgumentException("Lương phải là số");
 		}
 
 		return new NhanVien(ma, ho, ten, tuoi, pb, thang, luong);
@@ -349,7 +349,7 @@ public class GUI extends JFrame implements ActionListener {
 			NhanVien nv = docForm();
 			dsnv.them(nv);
 			model.addRow(nv.toRow());
-			showInfo("ThÃªm nhÃ¢n viÃªn " + nv.getMa() + " thÃ nh cÃ´ng!");
+			showInfo("Thêm nhân viên " + nv.getMa() + " thành công!");
 		} catch (Exception ex) {
 			showError(ex.getMessage());
 		}
@@ -362,7 +362,7 @@ public class GUI extends JFrame implements ActionListener {
 			List<NhanVien> list = docTable();
 			dsnv.setDs(list);
 			napLenBang();
-			showInfo("LÆ°u thÃ nh cÃ´ng!");
+			showInfo("Lưu thành công!");
 		} catch (Exception ex) {
 			showError(ex.getMessage());
 		}
@@ -371,12 +371,12 @@ public class GUI extends JFrame implements ActionListener {
 	private void xuLyXoa() {
 		int[] rows = table.getSelectedRows();
 		if (rows.length == 0) {
-			showError("Vui lÃ²ng chá»n nhÃ¢n viÃªn cáº§n xÃ³a!");
+			showError("Vui lòng chọn nhân viên cần xóa!");
 			return;
 		}
 
-		String message = "Báº¡n cÃ³ cháº¯c muá»‘n xÃ³a nhÃ¢n viÃªn Ä‘Ã£ chá»n?";
-		int confirm = JOptionPane.showConfirmDialog(this, message, "XÃ¡c nháº­n xÃ³a", JOptionPane.YES_NO_OPTION,
+		String message = "Bạn có chắc muốn xóa nhân viên đã chọn?";
+		int confirm = JOptionPane.showConfirmDialog(this, message, "Xác nhận xóa", JOptionPane.YES_NO_OPTION,
 				JOptionPane.WARNING_MESSAGE);
 		if (confirm != JOptionPane.YES_OPTION) {
 			return;
@@ -388,7 +388,7 @@ public class GUI extends JFrame implements ActionListener {
 			}
 			napLenBang();
 			xoaTrang();
-			showInfo("XÃ³a thÃ nh cÃ´ng!");
+			showInfo("Xóa thành công!");
 		} catch (Exception ex) {
 			showError(ex.getMessage());
 		}
@@ -397,14 +397,14 @@ public class GUI extends JFrame implements ActionListener {
 	private void xuLyTim() {
 		String ma = txtTim.getText().trim();
 		if (ma.isBlank()) {
-			showError("Vui lÃ²ng nháº­p mÃ£ cáº§n tÃ¬m");
+			showError("Vui lòng nhập mã cần tìm");
 			return;
 		}
 		xoaTrang();
 		table.clearSelection();
 		int idx = dsnv.timTheoMa(ma);
 		if (idx < 0) {
-			showError("KhÃ´ng tÃ¬m tháº¥y mÃ£: " + ma);
+			showError("Không tìm thấy mã: " + ma);
 		} else {
 			table.setRowSelectionInterval(idx, idx);
 			table.scrollRectToVisible(table.getCellRect(idx, 0, true));
@@ -427,11 +427,11 @@ public class GUI extends JFrame implements ActionListener {
 
 	// ===================== CỬA SỔ THÔNG BÁO =====================
 	private void showError(String msg) {
-		JOptionPane.showMessageDialog(this, msg, "Lá»—i", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(this, msg, "Lỗi", JOptionPane.ERROR_MESSAGE);
 	}
 
 	private void showInfo(String msg) {
-		JOptionPane.showMessageDialog(this, msg, "ThÃ´ng bÃ¡o", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(this, msg, "Thông báo", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	// ===================== HÀM CHÍNH (MAIN) =====================

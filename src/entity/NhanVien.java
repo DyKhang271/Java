@@ -1,25 +1,24 @@
-﻿package entity;
+package entity;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 import util.Regex;
 
 /**
- * Lá»›p thá»±c thá»ƒ Ä‘áº¡i diá»‡n cho má»™t NhÃ¢n ViÃªn trong há»‡ thá»‘ng.
- * Chá»©a cÃ¡c thÃ´ng tin cÃ¡ nhÃ¢n vÃ  phÆ°Æ¡ng thá»©c tÃ­nh lÆ°Æ¡ng.
+ * Lớp thực thể đại diện cho một Nhân Viên trong hệ thống.
+ * Chứa các thông tin cá nhân và phương thức tính lương.
  */
 public class NhanVien implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// ===================== CÃC THUá»˜C TÃNH (FIELDS) =====================
+	// ===================== CÁC THUỘC TÍNH (FIELDS) =====================
 	private String ma, ho, ten;
 	private int tuoi;
 	private String phongBan;
 	private int soThang;
 	private double tienLuong;
 
-	// ===================== HÃ€M KHá»žI Táº O (CONSTRUCTORS) =====================
+	// ===================== HÀM KHỞI TẠO (CONSTRUCTORS) =====================
 	public NhanVien(String ma) {
 		setMa(ma);
 	}
@@ -34,16 +33,16 @@ public class NhanVien implements Serializable {
 		setTienLuong(tienLuong);
 	}
 
-	// ===================== PHÆ¯Æ NG THá»¨C GET/SET =====================
+	// ===================== PHƯƠNG THỨC GET/SET =====================
 	public String getMa() {
 		return ma;
 	}
 
 	public void setMa(String ma) {
 		if (ma == null || ma.isBlank())
-			throw new IllegalArgumentException("MÃ£ khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Mã không được để trống");
 		if (!Regex.isValidMaNhanVien(ma))
-			throw new IllegalArgumentException("MÃ£ pháº£i theo máº«u NV + 2 hoáº·c 3 chá»¯ sá»‘, vÃ­ dá»¥: NV01 hoáº·c NV123");
+			throw new IllegalArgumentException("Mã phải theo mẫu NV + 2 hoặc 3 chữ số, ví dụ: NV01 hoặc NV123");
 		this.ma = ma.trim().toUpperCase();
 	}
 
@@ -53,9 +52,9 @@ public class NhanVien implements Serializable {
 
 	public void setHo(String ho) {
 		if (ho == null || ho.isBlank())
-			throw new IllegalArgumentException("Há» khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Họ không được để trống");
 		if (!Regex.isValidHoTen(ho))
-			throw new IllegalArgumentException("Há» chá»‰ Ä‘Æ°á»£c chá»©a chá»¯ cÃ¡i vÃ  khoáº£ng tráº¯ng");
+			throw new IllegalArgumentException("Họ chỉ được chứa chữ cái và khoảng trắng");
 		this.ho = ho.trim();
 	}
 
@@ -65,9 +64,9 @@ public class NhanVien implements Serializable {
 
 	public void setTen(String ten) {
 		if (ten == null || ten.isBlank())
-			throw new IllegalArgumentException("TÃªn khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Tên không được để trống");
 		if (!Regex.isValidHoTen(ten))
-			throw new IllegalArgumentException("TÃªn chá»‰ Ä‘Æ°á»£c chá»©a chá»¯ cÃ¡i vÃ  khoáº£ng tráº¯ng");
+			throw new IllegalArgumentException("Tên chỉ được chứa chữ cái và khoảng trắng");
 		this.ten = ten.trim();
 	}
 
@@ -77,7 +76,7 @@ public class NhanVien implements Serializable {
 
 	public void setTuoi(int tuoi) {
 		if (tuoi < 18 || tuoi > 60)
-			throw new IllegalArgumentException("Tuá»•i pháº£i tá»« 18 Ä‘áº¿n 60");
+			throw new IllegalArgumentException("Tuổi phải từ 18 đến 60");
 		this.tuoi = tuoi;
 	}
 
@@ -87,7 +86,7 @@ public class NhanVien implements Serializable {
 
 	public void setPhongBan(String phongBan) {
 		if (phongBan == null || phongBan.isBlank())
-			throw new IllegalArgumentException("PhÃ²ng ban khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng");
+			throw new IllegalArgumentException("Phòng ban không được để trống");
 		this.phongBan = phongBan.trim();
 	}
 
@@ -97,7 +96,7 @@ public class NhanVien implements Serializable {
 
 	public void setSoThang(int soThang) {
 		if (soThang < 0 || soThang > 12)
-			throw new IllegalArgumentException("Sá»‘ thÃ¡ng pháº£i tá»« 0 Ä‘áº¿n 12");
+			throw new IllegalArgumentException("Số tháng phải từ 0 đến 12");
 		this.soThang = soThang;
 	}
 
@@ -107,20 +106,20 @@ public class NhanVien implements Serializable {
 
 	public void setTienLuong(double tienLuong) {
 		if (tienLuong < 0)
-			throw new IllegalArgumentException("Tiá»n lÆ°Æ¡ng khÃ´ng Ä‘Æ°á»£c Ã¢m");
+			throw new IllegalArgumentException("Tiền lương không được âm");
 		this.tienLuong = tienLuong;
 	}
 
-	// ===================== NGHIá»†P Vá»¤ & TIá»†N ÃCH =====================
+	// ===================== NGHIỆP VỤ & TIỆN ÍCH =====================
 	/**
-	 * TÃ­nh lÆ°Æ¡ng thá»±c nháº­n cá»§a nhÃ¢n viÃªn = Sá»‘ thÃ¡ng * Tiá»n LÆ°Æ¡ng.
+	 * Tính lương thực nhận của nhân viên = Số tháng * Tiền Lương.
 	 */
 	public double getThucNhan() {
 		return this.soThang * this.tienLuong;
 	}
 
 	/**
-	 * Render thÃ´ng tin thÃ nh má»™t hÃ ng máº£ng Object Ä‘á»ƒ dá»… dÃ ng Ä‘á»• vÃ o JTable.
+	 * Render thông tin thành một hàng mảng Object để dễ dàng đổ vào JTable.
 	 */
 	public Object[] toRow() {
 		return new Object[] { ma, ho, ten, tuoi, phongBan, soThang, tienLuong, getThucNhan() };
@@ -143,8 +142,7 @@ public class NhanVien implements Serializable {
 
 	@Override
 	public String toString() {
-		String format = "MÃ£: %s, Há»: %s, TÃªn: %s, Tuá»•i: %d, PhÃ²ng Ban: %s, Sá»‘ ThÃ¡ng: %d, Tiá»n LÆ°Æ¡ng: %.2f, Thá»±c Nháº­n: %.2f";
+		String format = "Mã: %s, Họ: %s, Tên: %s, Tuổi: %d, Phòng Ban: %s, Số Tháng: %d, Tiền Lương: %.2f, Thực Nhận: %.2f";
 		return String.format(format, ma, ho, ten, tuoi, phongBan, soThang, tienLuong, getThucNhan());
 	}
 }
-
